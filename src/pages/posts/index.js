@@ -4,19 +4,50 @@ import styled from "styled-components";
 import { getPosts, getUsers } from "../api/api";
 import { getAutorUsernameById } from "../../utils/utils";
 import Header from "@/components/Header";
+import UserSVG from "@/components/User";
 const PostContainer = styled.div`
-  h1 {
-    text-align: center;
+  margin-top: 5rem;
+  .ContainerCard {
+    margin: 1rem 0;
   }
+
   .ListaPost {
-    padding: 1rem;
-    div {
-      margin: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 1.3rem;
+  }
+  .CardPost {
+    display: flex;
+    flex-direction: row;
+    background-color: red;
+    border-radius: 10px;
+    height: 7rem;
+  }
+  .CardPost:hover {
+    opacity: 0.5;
+    transition: opacity 0.3s ease-in-out;
+  }
+  .UserImage {
+    display: flex;
+    background-color: white;
+    border-radius: 20px;
+    align-self: center;
+    justify-content: center;
+    margin: 0 0.5rem 0 1rem;
+    width: 3rem;
+  }
+  .PostText {
+    flex-basis: 90%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 0.5rem;
+    justify-content: center;
+    align-items: left;
+    p {
+      font-size: 18px;
     }
-    div:hover {
-      font-size: 20px;
-      padding-left: 1em;
-      border-left: 5px solid black;
+    span {
+      font-size: 14px;
     }
   }
 `;
@@ -24,17 +55,24 @@ export default function Posts({ posts, users }) {
   return (
     <PostContainer>
       <Header />
-      <div>
-        <div className="ListaPost">
-          {posts.map((post) => (
-            <div key={post.id}>
+      <div className="ListaPost">
+        {posts.map((post) => (
+          <>
+            <div className="ContainerCard">
               <Link href={"/posts/" + post.id}>
-                <h3>Titulo: {post.title}</h3>
+                <div className="CardPost" key={post.id}>
+                  <div className="UserImage">
+                    <UserSVG />
+                  </div>
+                  <div className="PostText">
+                    <p>{post.title}</p>
+                    <span>@{getAutorUsernameById(users, post.userId)}</span>
+                  </div>
+                </div>
               </Link>
-              <p>Nome do usuário: {getAutorUsernameById(users, post.userId)}</p>
             </div>
-          ))}
-        </div>
+          </>
+        ))}
       </div>
     </PostContainer>
   );

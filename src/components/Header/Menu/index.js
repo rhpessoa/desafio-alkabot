@@ -12,11 +12,12 @@ const MenuContainer = styled.div`
   .MenuAberto {
     text-align: center;
     list-style-type: none;
-    top: 8.9%;
+    top: 101%;
     right: 0;
     position: absolute;
     width: 100%;
     background-color: red;
+    border-bottom: 1px solid black;
     .ContainerInfoMenu {
       margin: 1.3rem;
       li {
@@ -36,8 +37,7 @@ const MenuContainer = styled.div`
     }
   }
 `;
-export default function MenuSVG() {
-  const [isMenuOpened, setIsMenuOpened] = React.useState(false);
+export default function MenuSVG({ isMenuOpened, setIsMenuOpened }) {
   function OpenMenu() {
     if (!isMenuOpened) return setIsMenuOpened(true);
     else {
@@ -57,7 +57,7 @@ export default function MenuSVG() {
             </Link>
             <Link href={"/posts"}>
               <li>Posts</li>
-              </Link>
+            </Link>
           </div>
         </div>
       )}
