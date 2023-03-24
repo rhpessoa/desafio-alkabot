@@ -1,0 +1,16 @@
+import Image from "next/image";
+import Logo from "../../../../public/logo.svg"
+
+export default function LogoSVG() {
+  return (
+    <>
+      <Image
+        alt="Logo App"
+        src={Logo}
+        width={40}
+        height={40}
+      />
+    </>
+  );
+}
+

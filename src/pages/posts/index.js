@@ -2,7 +2,8 @@ import React from "react";
 import Link from "next/link";
 import styled from "styled-components";
 import { getPosts, getUsers } from "../api/api";
-import getAutorById from "../../utils/utils";
+import { getAutorUsernameById } from "../../utils/utils";
+import Header from "@/components/Header";
 const PostContainer = styled.div`
   h1 {
     text-align: center;
@@ -22,15 +23,15 @@ const PostContainer = styled.div`
 export default function Posts({ posts, users }) {
   return (
     <PostContainer>
+      <Header />
       <div>
-        <h1>All Post</h1>
         <div className="ListaPost">
           {posts.map((post) => (
             <div key={post.id}>
               <Link href={"/posts/" + post.id}>
                 <h3>Titulo: {post.title}</h3>
               </Link>
-              <p>Author: {getAutorById(users, post.userId)}</p>
+              <p>Nome do usuário: {getAutorUsernameById(users, post.userId)}</p>
             </div>
           ))}
         </div>

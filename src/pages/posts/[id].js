@@ -1,6 +1,6 @@
 import React from "react";
 import { getUsers } from "../api/api";
-import getAutorById from "../../utils/utils";
+import { getAutorNameById } from "../../utils/utils";
 
 const Detalhes = ({ post, comments, users }) => {
   const [isComentOpened, setIsComentOpened] = React.useState(false);
@@ -17,7 +17,7 @@ const Detalhes = ({ post, comments, users }) => {
         <a onClick={() => OpenComments()}>
           <h1>{`Titulo: ${post.title}`}</h1>
           <p>{`Mensagem: ${post.body}`}</p>
-          <p>Author: {getAutorById(users, post.userId)}</p>
+          <p>Author: {getAutorNameById(users, post.userId)}</p>
         </a>
       </div>
       {isComentOpened && (
