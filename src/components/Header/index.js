@@ -7,7 +7,6 @@ const HeaderContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   height: 5rem;
-  margin-bottom: 5rem;
   background-color: #d9d9d9;
   border-bottom: 1px solid black;
   width: 100%;

@@ -5,8 +5,16 @@ import { getPosts, getUsers } from "../api/api";
 import { getAutorUsernameById } from "../../utils/utils";
 import Header from "@/components/Header";
 import UserSVG from "@/components/User";
+import InfiniteScroll from "react-infinite-scroll-component";
+import LoaderSpinner from "@/components/Spinner";
+import Footer from "@/components/Footer";
+
 const PostContainer = styled.div`
+  height: 100vh;
   margin-top: 5rem;
+  .ContainerListaPost {
+    margin-bottom: 5rem;
+  }
   .ContainerCard {
     margin: 1rem 0;
   }
@@ -40,10 +48,10 @@ const PostContainer = styled.div`
     flex-basis: 90%;
     display: flex;
     flex-direction: column;
-    margin: 0 0.5rem;
+    margin: 0.5rem;
     justify-content: center;
     align-items: left;
-    p {
+    width: 100% p {
       font-size: 18px;
     }
     span {
@@ -52,28 +60,68 @@ const PostContainer = styled.div`
   }
 `;
 export default function Posts({ posts, users }) {
+  const [items, setItems] = React.useState(posts.slice(0, 3));
+  const [hasMore, setHasMore] = React.useState(true);
+  const [showLoader, setShowLoader] = React.useState(false);
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      if (
+        window.innerHeight + document.documentElement.scrollTop <
+        document.documentElement.offsetHeight
+      ) {
+        setShowLoader(false);
+      } else {
+        setShowLoader(true);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const fetchMoreData = () => {
+    if (items.length >= posts.length) {
+      setHasMore(false);
+      return;
+    }
+    setTimeout(() => {
+      setItems(items.concat(posts.slice(items.length, items.length + 10)));
+    }, 1000);
+  };
+
   return (
     <PostContainer>
       <Header />
-      <div className="ListaPost">
-        {posts.map((post) => (
-          <>
-            <div className="ContainerCard">
-              <Link href={"/posts/" + post.id}>
-                <div className="CardPost" key={post.id}>
-                  <div className="UserImage">
-                    <UserSVG />
+      <div className="ContainerListaPost">
+        <InfiniteScroll
+          className="InfiniteScroll"
+          dataLength={items.length}
+          next={fetchMoreData}
+          hasMore={hasMore}
+          loader={showLoader && <LoaderSpinner />}
+        >
+          <div className="ListaPost">
+            {items.map((post) => (
+              <div className="ContainerCard" key={post.id}>
+                <Link href={"/posts/" + post.id}>
+                  <div className="CardPost">
+                    <div className="UserImage">
+                      <UserSVG />
+                    </div>
+                    <div className="PostText">
+                      <p>{post.title}</p>
+                      <span>@{getAutorUsernameById(users, post.userId)}</span>
+                    </div>
                   </div>
-                  <div className="PostText">
-                    <p>{post.title}</p>
-                    <span>@{getAutorUsernameById(users, post.userId)}</span>
-                  </div>
-                </div>
-              </Link>
-            </div>
-          </>
-        ))}
+                </Link>
+              </div>
+            ))}
+          </div>
+        </InfiniteScroll>
       </div>
+      <Footer />
     </PostContainer>
   );
 }
