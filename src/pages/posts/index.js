@@ -26,7 +26,7 @@ const PostsContainer = styled.div`
   .CardPost {
     display: flex;
     flex-direction: row;
-    background-color: red;
+    background-color: #6198ed;
     border-radius: 10px;
     height: 7rem;
   }
@@ -36,7 +36,7 @@ const PostsContainer = styled.div`
   }
   .UserImage {
     display: flex;
-    background-color: white;
+    background-color: #c5c5c7;
     border-radius: 20px;
     align-self: center;
     justify-content: center;

@@ -6,7 +6,7 @@ const FooterContain = styled.div`
   width: 100%;
   height: 7rem;
   bottom: 0;
-  background-color: #d9d9d9;
+  background-color: #3e74c9;
   .FooterInfoContainer{
     display:flex;
     justify-content:space-between;

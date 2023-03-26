@@ -16,7 +16,7 @@ const MenuContainer = styled.div`
     right: 0;
     position: absolute;
     width: 100%;
-    background-color: red;
+    background-color: #5a84c4;
     border-bottom: 1px solid black;
     .ContainerInfoMenu {
       margin: 1.3rem;

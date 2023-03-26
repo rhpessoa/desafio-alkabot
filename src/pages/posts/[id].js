@@ -12,7 +12,7 @@ import Share from "@/components/Share";
 const PostContainer = styled.div`
   .ContainerListaPost {
     margin-top: 5rem;
-    margin-bottom: 5rem;
+    margin-bottom: 7rem;
   }
   .ContainerCard {
     margin: 1rem 0 1rem 0;
@@ -25,14 +25,14 @@ const PostContainer = styled.div`
   .CardPost {
     display: flex;
     flex-direction: row;
-    background-color: red;
+    background-color: #6198ed;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     height: auto;
   }
   .UserImage {
     display: flex;
-    background-color: white;
+    background-color: #c5c5c7;
     border-radius: 20px;
     align-self: center;
     justify-content: center;
@@ -61,7 +61,7 @@ const PostContainer = styled.div`
     }
   }
   .ContainerMessage {
-    background-color: blue;
+    background-color: #b5d2ff;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     height: auto;
@@ -93,9 +93,6 @@ const PostContainer = styled.div`
     text-align: center;
     margin: 0.5rem;
   }
-  .ContainerComents {
-    background-color: red;
-  }
   .ListaComments {
     display: flex;
     flex-direction: column;
@@ -103,12 +100,12 @@ const PostContainer = styled.div`
   .CardComment {
     height: auto;
     border-radius: 10px;
-    background-color: red;
+    background-color: #6198ed;
     display: flex;
   }
   .UserImageComment {
     display: flex;
-    background-color: white;
+    background-color: #c5c5c7;
     border-radius: 20px;
     align-self: center;
     justify-content: center;
@@ -123,7 +120,9 @@ const PostContainer = styled.div`
   .ButtonComment {
     padding: 0.5rem;
     border-radius: 10px;
-    background-color: red;
+    background-color: #265091;
+    color: white;
+    font-weight: bold;
   }
 `;
 const Detalhes = ({ post, comments, users }) => {
