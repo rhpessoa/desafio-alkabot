@@ -9,20 +9,19 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import LoaderSpinner from "@/components/Spinner";
 import Footer from "@/components/Footer";
 
-const PostContainer = styled.div`
+const PostsContainer = styled.div`
   height: 100vh;
-  margin-top: 5rem;
   .ContainerListaPost {
-    margin-bottom: 5rem;
+    margin-top: 5rem;
+    margin-bottom: 7rem;
   }
   .ContainerCard {
     margin: 1rem 0;
   }
-
   .ListaPost {
     display: flex;
     flex-direction: column;
-    margin: 1rem 1.3rem;
+    margin: 0 1.3rem;
   }
   .CardPost {
     display: flex;
@@ -60,7 +59,7 @@ const PostContainer = styled.div`
   }
 `;
 export default function Posts({ posts, users }) {
-  const [items, setItems] = React.useState(posts.slice(0, 3));
+  const [items, setItems] = React.useState(posts.slice(0, 5));
   const [hasMore, setHasMore] = React.useState(true);
   const [showLoader, setShowLoader] = React.useState(false);
 
@@ -92,7 +91,7 @@ export default function Posts({ posts, users }) {
   };
 
   return (
-    <PostContainer>
+    <PostsContainer>
       <Header />
       <div className="ContainerListaPost">
         <InfiniteScroll
@@ -122,7 +121,7 @@ export default function Posts({ posts, users }) {
         </InfiniteScroll>
       </div>
       <Footer />
-    </PostContainer>
+    </PostsContainer>
   );
 }
 

@@ -1,16 +1,37 @@
 import styled from "styled-components";
-
-const ContainerFooter = styled.div`
+import SocialMedia from "./SocialMedia";
+import LogoSVG from "../Header/Logo";
+const FooterContain = styled.div`
   position: fixed;
-  bottom: 0;
   width: 100%;
-  background-color:blue;
-  height: 5rem;
+  height: 7rem;
+  bottom: 0;
+  background-color: #d9d9d9;
+  .FooterInfoContainer{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    height: 100%;
+  }
+  .InfoFooter {
+    margin-left:1.3rem;
+  }
+  .RedesFooter {
+    margin-right: 2rem;
+  }
 `;
 export default function Footer() {
   return (
-    <ContainerFooter>
-      <h1>Footer</h1>
-    </ContainerFooter>
+    <FooterContain>
+      <div className="FooterInfoContainer">
+        <div className="InfoFooter">
+          <LogoSVG />
+        </div>
+        <div className="RedesFooter">
+          <span>Acesse nossas redes:</span>
+          <SocialMedia />
+        </div>
+      </div>
+    </FooterContain>
   );
 }
