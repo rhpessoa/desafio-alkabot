@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import LogoSVG from "./Logo";
 import MenuSVG from "./Menu";
-import React from "react";
+import Link from "next/link";
+
 const HeaderContainer = styled.div`
   display: flex;
   align-items: center;
@@ -24,24 +25,63 @@ const HeaderContainer = styled.div`
     p {
       margin-left: 1rem;
       font-size: 18px;
-      color:white;
+      color: white;
+    }
+  }
+
+  .ContainerLista {
+    display: none;
+  }
+  @media screen and (min-width: 768px) {
+    .LogoMenu {
+      display: none;
+    }
+    .NomeEmpresa {
+      p {
+        font-size: 24px;
+      }
+    }
+    .ContainerLista {
+      display: flex;
+      list-style: none;
+      margin-right: 5rem;
+      color: white;
+      font-weight: bold;
+      font-size: 24px;
+    }
+    .ItemLista:first-child {
+      margin-right: 2rem;
+    }
+    .ItemLista {
+      p:hover {
+        text-decoration: underline;
+      }
     }
   }
 `;
 export default function Header() {
-  const [isMenuOpened, setIsMenuOpened] = React.useState(false);
-
   return (
     <HeaderContainer>
       <div className="LogoHeader">
         <LogoSVG />
-        {isMenuOpened && <p>Alkabot</p>}
+        <div className="NomeEmpresa">
+          <p>Alkabot</p>
+        </div>
+      </div>
+      <div className="ContainerLista">
+        <li className="ItemLista">
+          <Link href={"/posts"}>
+            <p>Posts</p>
+          </Link>
+        </li>
+        <li className="ItemLista">
+          <Link href={"/aboutUs"}>
+            <p>Sobre Nós</p>
+          </Link>
+        </li>
       </div>
       <div className="LogoMenu">
-        <MenuSVG
-          isMenuOpened={isMenuOpened}
-          setIsMenuOpened={setIsMenuOpened}
-        />
+        <MenuSVG />
       </div>
     </HeaderContainer>
   );

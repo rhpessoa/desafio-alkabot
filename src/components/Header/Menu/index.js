@@ -37,7 +37,8 @@ const MenuContainer = styled.div`
     }
   }
 `;
-export default function MenuSVG({ isMenuOpened, setIsMenuOpened }) {
+export default function MenuSVG() {
+  const [isMenuOpened, setIsMenuOpened] = React.useState(false);
   function OpenMenu() {
     if (!isMenuOpened) return setIsMenuOpened(true);
     else {
