@@ -58,6 +58,17 @@ const HeaderContainer = styled.div`
       }
     }
   }
+  @media screen and (min-width: 1440px) {
+    .NomeEmpresa {
+      p {
+        font-size: 28px;
+      }
+    }
+    .ContainerLista {
+      font-size: 28px;
+      margin-right: 7rem;
+    }
+  }
 `;
 export default function Header() {
   return (
