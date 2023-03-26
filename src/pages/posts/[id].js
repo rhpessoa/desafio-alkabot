@@ -160,8 +160,8 @@ const Detalhes = ({ post, comments, users }) => {
             <div className="ContainerMessage">
               <div className="ContainBody">
                 <div className="ContainerDados">
-                  <p>Views: 1</p>
-                  <p>Shares: 1</p>
+                  <span>Views: 1</span>
+                  <span>Shares: 1</span>
                 </div>
                 <div className="ContainerText">
                   <p>{post.body}</p>
@@ -196,7 +196,7 @@ const Detalhes = ({ post, comments, users }) => {
                 {isComentOpened && (
                   <div className="ListaComments">
                     {comments.map((coment) => (
-                      <div className="ContainerCard" key={post.id}>
+                      <div className="ContainerCard" key={coment.id}>
                         <div className="CardComment">
                           <div className="UserImageComment">
                             <UserSVG />
