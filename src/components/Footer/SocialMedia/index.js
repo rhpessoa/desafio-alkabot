@@ -9,17 +9,23 @@ const SocialMediaContain = styled.div`
   margin-top: 0.5em;
   display: flex;
   justify-content: center;
-  .IconesContain{
-    width:40px;
-    height:40px;
+  .IconesContain {
+    width: 40px;
+    height: 40px;
   }
   .IconesContain:not(:last-child) {
     padding-right: 0.5em;
   }
+  @media screen and (min-width: 768px) {
+    .IconesContain {
+      width: 45px;
+      height: 45px;
+    }
+  }
 `;
 export default function SocialMedia() {
   return (
-    <SocialMediaContain >
+    <SocialMediaContain>
       <div className="IconesContain">
         <a href="#">
           <Image alt="Wpp icone" src={WPPIcon} width={40} height={40} />
