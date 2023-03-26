@@ -8,29 +8,25 @@ const FooterContain = styled.div`
   bottom: 0;
   background-color: #3e74c9;
   .FooterInfoContainer{
+    padding-top: 0.5rem;
     display:flex;
-    justify-content:space-between;
-    align-items:center;
-    height: 100%;
+    flex-direction:column;
+    justify-content:center;
   }
-  .InfoFooter {
-    margin-left:1.3rem;
-  }
-  .RedesFooter {
-    margin-right: 2rem;
+  .TextoFooter {
+    margin: 0 5rem;
+    text-align: center;
+    color: white;
   }
 `;
 export default function Footer() {
   return (
     <FooterContain>
       <div className="FooterInfoContainer">
-        <div className="InfoFooter">
-          <LogoSVG />
+        <div className="TextoFooter">
+          <p>Acompanhe <strong>Alkabot </strong>também nas suas redes sociais.</p>
         </div>
-        <div className="RedesFooter">
-          <span>Acesse nossas redes:</span>
-          <SocialMedia />
-        </div>
+        <SocialMedia />
       </div>
     </FooterContain>
   );

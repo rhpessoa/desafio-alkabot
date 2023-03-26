@@ -24,6 +24,7 @@ const HeaderContainer = styled.div`
     p {
       margin-left: 1rem;
       font-size: 18px;
+      color:white;
     }
   }
 `;
