@@ -1,5 +1,5 @@
 import Image from "next/image";
-import User from "../../../public/user.svg"
+import User from "../../../public/icon/user.svg"
 
 export default function UserSVG() {
   return (

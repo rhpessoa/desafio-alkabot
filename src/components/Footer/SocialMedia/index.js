@@ -1,8 +1,8 @@
 import Image from "next/image";
-import WPPIcon from "../../../../public/whatsapp.svg";
-import TwitchIcon from "../../../../public/twitch.svg";
-import InstaIcon from "../../../../public/instagram.svg";
-import TwitterIcon from "../../../../public/twitter.svg";
+import WPPIcon from "../../../../public/icon/whatsapp.svg";
+import TwitchIcon from "../../../../public/icon/twitch.svg";
+import InstaIcon from "../../../../public/icon/instagram.svg";
+import TwitterIcon from "../../../../public/icon/twitter.svg";
 import styled from "styled-components";
 
 const SocialMediaContain = styled.div`

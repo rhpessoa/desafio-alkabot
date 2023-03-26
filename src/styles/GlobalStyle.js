@@ -6,17 +6,16 @@ const GlobalStyle = createGlobalStyle`
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
-  font-family: Arial, sans-serif;
   font-size: 16px;
   line-height: 1.5;
 }
-
-h1, h2, h3, h4, h5, h6 {
-  font-weight: bold;
+p{
+  font-family: "Calistoga", cursive;
 }
-
+span{
+  font-family: 'Raleway', sans-serif;
+}
 ul, ol {
   list-style: none;
 }

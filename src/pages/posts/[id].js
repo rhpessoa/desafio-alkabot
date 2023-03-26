@@ -123,6 +123,7 @@ const PostContainer = styled.div`
     background-color: #265091;
     color: white;
     font-weight: bold;
+    box-shadow: 3px 3px 0px #000000;
   }
 `;
 const Detalhes = ({ post, comments, users }) => {
@@ -151,7 +152,7 @@ const Detalhes = ({ post, comments, users }) => {
                     <span>@{getAutorUsernameById(users, post.userId)}</span>
                   </div>
                   <div>
-                    <p>há 3 Horas</p>
+                    <span>há 3 Horas</span>
                   </div>
                 </div>
               </div>

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Menu from "../../../../public/menu.svg";
+import Menu from "../../../../public/icon/menu.svg";
 import React from "react";
 import styled from "styled-components";
 import Link from "next/link";

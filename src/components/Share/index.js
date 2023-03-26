@@ -1,5 +1,5 @@
 import Image from "next/image";
-import share from "../../../public/share.svg";
+import share from "../../../public/icon/share.svg";
 export default function Share() {
   return (
     <>

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import dislike from "../../../public/dislike.svg";
+import dislike from "../../../public/icon/dislike.svg";
 export default function Dislike() {
   return (
     <>
