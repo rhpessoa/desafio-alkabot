@@ -38,7 +38,7 @@ export default function Footer() {
       <div className="FooterInfoContainer">
         <div className="TextoFooter">
           <p>
-            Acompanhe <strong>Alkabot </strong>também nas suas redes sociais.
+            Acompanhe <strong>Alkabot </strong>também nas suas redes sociais
           </p>
         </div>
         <SocialMedia />

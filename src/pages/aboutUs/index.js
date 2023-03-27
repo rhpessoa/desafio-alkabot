@@ -25,7 +25,19 @@ const ContainerAboutUs = styled.div`
       margin-top: 0.5rem;
     }
     section {
-      margin: 0.5rem 0;
+      margin: 0.5rem 0.5rem;
+      display: block;
+      text-align: justify;
+    }
+  }
+  @media screen and (min-width: 768px) {
+    span {
+      font-size: 1.2rem;
+    }
+  }
+  @media screen and (min-width: 1440px) {
+    span {
+      font-size: 1.4rem;
     }
   }
 `;

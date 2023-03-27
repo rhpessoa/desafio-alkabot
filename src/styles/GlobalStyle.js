@@ -11,10 +11,10 @@ body {
   line-height: 1.5;
 }
 p{
-  font-family: "Calistoga", cursive;
+  font-family: 'IBM Plex Sans Condensed', sans-serif;
 }
 span{
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 ul, ol {
   list-style: none;

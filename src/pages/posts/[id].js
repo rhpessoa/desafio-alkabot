@@ -129,7 +129,7 @@ const PostContainer = styled.div`
     font-weight: bold;
     box-shadow: 3px 3px 0px #000000;
   }
-  .IconesRedesSociais {
+  .IconesFeedback {
     height: 2.1rem;
     width: 2.1rem;
   }
@@ -158,6 +158,53 @@ const PostContainer = styled.div`
     }
     100% {
       transform: rotate(180deg);
+    }
+  }
+  @media screen and (min-width: 768px) {
+    .UserImage {
+      width: auto;
+    }
+    p {
+      font-size: 1.2rem;
+    }
+    .ContainerDados {
+      justify-content: start;
+      span:first-child {
+        margin-right: 1rem;
+      }
+    }
+  }
+  @media screen and (min-width: 1440px) {
+    .CardComment {
+      padding: 1rem 0;
+    }
+    .ContainerInfo {
+      div:last-child {
+        margin-right: 0;
+      }
+    }
+    .PostText {
+      p {
+        font-size: 1.6rem;
+      }
+      span {
+        font-size: 1.2rem;
+      }
+    }
+    .ContainerDados {
+      span {
+        font-size: 1.2rem;
+      }
+    }
+    .ContainerText {
+      p {
+        font-size: 1.4rem;
+      }
+    }
+    .ContainerAutor {
+      span {
+        font-size: 1.2rem;
+      }
     }
   }
 `;
@@ -208,7 +255,7 @@ const Detalhes = ({ post, comments, users }) => {
                   <div>
                     <a>
                       <FontAwesomeIcon
-                        className="IconesRedesSociais Like"
+                        className="IconesFeedback Like"
                         icon={icon(faThumbsUp)}
                       />
                     </a>
@@ -216,7 +263,7 @@ const Detalhes = ({ post, comments, users }) => {
                   <div>
                     <a>
                       <FontAwesomeIcon
-                        className="IconesRedesSociais Retweet"
+                        className="IconesFeedback Retweet"
                         icon={icon(faRetweet)}
                       />
                     </a>
@@ -224,7 +271,7 @@ const Detalhes = ({ post, comments, users }) => {
                   <div>
                     <a>
                       <FontAwesomeIcon
-                        className="IconesRedesSociais Dislike"
+                        className="IconesFeedback Dislike"
                         icon={icon(faThumbsDown)}
                       />
                     </a>

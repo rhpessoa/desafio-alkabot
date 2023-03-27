@@ -31,6 +31,10 @@ const SocialMediaContain = styled.div`
     }
   }
   @media screen and (min-width: 1440px) {
+    .IconesRedesSociais {
+      width: 1.7rem;
+      height: 1.7rem;
+    }
     .IconesContain:not(:last-child) {
       margin-right: 1rem;
     }

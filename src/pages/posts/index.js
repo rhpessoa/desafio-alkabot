@@ -57,6 +57,15 @@ const PostsContainer = styled.div`
       font-size: 14px;
     }
   }
+  @media screen and (min-width: 768px) {
+    .ContainerListaPost {
+      margin-top: 5rem;
+      margin-bottom: 6rem;
+    }
+    .UserImage {
+      width: auto;
+    }
+  }
 `;
 export default function Posts({ posts, users }) {
   const [items, setItems] = React.useState(posts.slice(0, 5));
