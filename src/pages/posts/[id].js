@@ -5,9 +5,13 @@ import styled from "styled-components";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import UserSVG from "@/components/User";
-import Like from "@/components/Like";
-import Dislike from "@/components/Dislike";
-import Share from "@/components/Share";
+import {
+  faThumbsUp,
+  faThumbsDown,
+  faRetweet,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { icon } from "@fortawesome/fontawesome-svg-core";
 
 const PostContainer = styled.div`
   .ContainerListaPost {
@@ -82,7 +86,7 @@ const PostContainer = styled.div`
     margin: 0.5rem 0;
   }
   .ContainerFeedback {
-    margin: 2rem 0 1rem 0;
+    margin: 1rem 0;
     display: flex;
     justify-content: center;
     div:not(:last-child) {
@@ -124,6 +128,37 @@ const PostContainer = styled.div`
     color: white;
     font-weight: bold;
     box-shadow: 3px 3px 0px #000000;
+  }
+  .IconesRedesSociais {
+    height: 2.1rem;
+    width: 2.1rem;
+  }
+  .Like {
+    transition: color 0.2s ease-in-out;
+  }
+  .Like:hover {
+    color: green;
+    transition: color 0.3s linear;
+  }
+  .Dislike {
+    transition: color 0.2s ease-in-out;
+  }
+  .Dislike:hover {
+    color: red;
+    transition: color 0.3s linear;
+  }
+  .Retweet:hover {
+    color: blue;
+    animation: spin 1s ease-out forwards;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(180deg);
+    }
   }
 `;
 const Detalhes = ({ post, comments, users }) => {
@@ -172,17 +207,26 @@ const Detalhes = ({ post, comments, users }) => {
                 <div className="ContainerFeedback">
                   <div>
                     <a>
-                      <Like />
+                      <FontAwesomeIcon
+                        className="IconesRedesSociais Like"
+                        icon={icon(faThumbsUp)}
+                      />
                     </a>
                   </div>
                   <div>
                     <a>
-                      <Share />
+                      <FontAwesomeIcon
+                        className="IconesRedesSociais Retweet"
+                        icon={icon(faRetweet)}
+                      />
                     </a>
                   </div>
                   <div>
                     <a>
-                      <Dislike />
+                      <FontAwesomeIcon
+                        className="IconesRedesSociais Dislike"
+                        icon={icon(faThumbsDown)}
+                      />
                     </a>
                   </div>
                 </div>
