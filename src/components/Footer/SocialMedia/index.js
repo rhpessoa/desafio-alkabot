@@ -6,20 +6,28 @@ import TwitterIcon from "../../../../public/icon/twitter.svg";
 import styled from "styled-components";
 
 const SocialMediaContain = styled.div`
-  margin-top: 0.5em;
+  margin: 0.5em 0;
   display: flex;
   justify-content: center;
   .IconesContain {
-    width: 40px;
-    height: 40px;
+    width: 1.6rem;
+    height: 1.6rem;
   }
   .IconesContain:not(:last-child) {
-    padding-right: 0.5em;
+    margin-right: 0.5rem;
   }
   @media screen and (min-width: 768px) {
     .IconesContain {
-      width: 45px;
-      height: 45px;
+      width: 2rem;
+      height: 2rem;
+    }
+    .IconesContain:not(:last-child) {
+      margin-right: 0.8rem;
+    }
+  }
+  @media screen and (min-width: 1440px) {
+    .IconesContain:not(:last-child) {
+      margin-right: 1rem;
     }
   }
 `;

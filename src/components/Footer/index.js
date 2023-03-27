@@ -3,7 +3,7 @@ import SocialMedia from "./SocialMedia";
 const FooterContain = styled.div`
   position: fixed;
   width: 100%;
-  height: 8rem;
+  height: 6rem;
   bottom: 0;
   background-color: #3e74c9;
   .FooterInfoContainer {
@@ -13,23 +13,21 @@ const FooterContain = styled.div`
     justify-content: center;
   }
   .TextoFooter {
-    margin: 0 5rem;
+    margin: 0 3rem;
     text-align: center;
     color: white;
   }
   @media screen and (min-width: 768px) {
-    height: 9rem;
+    height: 6rem;
     .FooterInfoContainer {
       padding: 0.5rem 0;
     }
     .TextoFooter {
-      margin: 0 14rem;
-      font-size: 24px;
+      font-size: 22px;
     }
   }
   @media screen and (min-width: 1440px) {
     .TextoFooter {
-      margin: 0 14rem;
       font-size: 28px;
     }
   }
